@@ -35,6 +35,13 @@ class AuctionApiController extends Controller
         return response()->json($auction);
     }
 
+    public function getOffers($id)
+    {
+        $auction = Auction::findOrFail($id);
+        $offers = $auction->Offers()->with('author')->get();
+        return response()->json($offers);
+    }
+
     /**
      * Update the specified resource in storage.
      */

@@ -14,3 +14,6 @@ Route::Get('users/{id}/auction', [UserApiController::class, 'getAuctions']);
 Route::Get('users/{id}/offer', [UserApiController::class, 'getOffers']);
 
 Route::resource('auctions', AuctionApiController::class);
+Route::Get('auctions/{id}/offer', [AuctionApiController::class, 'getOffers']);
+
+Route::resource('offers', OfferApiController::class);
